@@ -236,12 +236,19 @@ ul, ol {
   box-shadow: 0 6px 15px rgba(var(--primary-rgb), 0.2);
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
 .hamburger-menu {
   display: none;
   flex-direction: column;
   gap: 5px;
   width: 25px;
   height: 20px;
+  justify-content: center;
 }
 
 .hamburger-menu span {
@@ -251,6 +258,18 @@ ul, ol {
   background: var(--primary-color);
   border-radius: 3px;
   transition: var(--transition-fast);
+}
+
+.hamburger-menu.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 /* ================= MAIN CONTAINER & LAYOUTS ================= */
@@ -2881,5 +2900,70 @@ body.dark-theme .france-bg-shape {
 
 body.dark-theme .map-fact-panel {
   background-color: #0d162a;
+}
+
+/* ================= MOBILE-SPECIFIC ADJUSTMENTS (<= 576px) ================= */
+@media (max-width: 576px) {
+  .hero-section {
+    padding: 60px 15px 40px;
+    gap: 30px;
+  }
+  .hero-title {
+    font-size: 2.1rem;
+    line-height: 1.2;
+  }
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+  .hero-actions {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+  .hero-actions .btn {
+    width: 100%;
+  }
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 25px;
+  }
+  .stat-card {
+    padding: 15px;
+  }
+  .stat-number {
+    font-size: 1.8rem;
+  }
+  .section-title {
+    font-size: 1.8rem;
+  }
+  .section-subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 30px;
+  }
+  .about-text-card h3 {
+    font-size: 1.3rem;
+  }
+  .roadmap-dot {
+    width: 45px;
+    height: 45px;
+    font-size: 0.8rem;
+  }
+  .roadmap-content {
+    margin-left: 65px;
+    padding: 15px;
+  }
+  .roadmap-line {
+    left: 22px;
+  }
+  body.dark-theme .theme-toggle-btn, 
+  .theme-toggle-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+  .header-container {
+    padding: 10px 15px;
+  }
 }
 
