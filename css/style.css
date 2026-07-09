@@ -2910,6 +2910,10 @@ body.dark-theme .map-fact-panel {
   background-color: #0d162a;
 }
 
+body.dark-theme .testimonial-quote {
+  color: var(--text-main);
+}
+
 /* ================= MOBILE-SPECIFIC ADJUSTMENTS (<= 576px) ================= */
 @media (max-width: 576px) {
   .hero-section {

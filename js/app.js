@@ -423,7 +423,7 @@ document.addEventListener('DOMContentLoaded', () => {
     resultScore.textContent = quizScore;
 
     let badge = 'A1 - Beginner';
-    let desc = 'You are at the foundation stage! We recommend starting with Madame Sophie\'s Beginner Course to master basic vocabulary and grammar.';
+    let desc = 'You are at the foundation stage! We recommend starting with Monsieur Pierre\'s Beginner Course to master basic vocabulary and grammar.';
     
     if (quizScore === 3 || quizScore === 4) {
       badge = 'A2/B1 - Intermediate';
