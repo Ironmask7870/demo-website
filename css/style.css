@@ -2711,6 +2711,14 @@ body.dark-theme .logo {
   color: #ffffff;
 }
 
+body.dark-theme .nav-menu {
+  background-color: var(--bg-card);
+}
+
+body.dark-theme .hamburger-menu span {
+  background-color: #ffffff;
+}
+
 body.dark-theme .nav-link {
   color: #f3f4f6;
 }
