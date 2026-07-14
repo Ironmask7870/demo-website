@@ -1,23 +1,23 @@
 :root {
-  --bg-color: #f4f9f5;      /* Use the soft warm-light green for the site background */
-  --primary-color: #2e7d32; /* Use the Sage/Forest green for headings and buttons */
-  --text-color: #1a231a;    /* Deep dark green/gray for readable text */
-  --muted-color: #556655;   /* Moss gray-green for descriptions */
-  --border-color: #d0dad0;  /* Soft green borders */
-  --card-bg: #e2ebd5;       /* Warm secondary container background */
-  --sidebar-bg: #e2ebd5;
-  --white-color: var(--bg-color);
+  --bg-color:                     #f4f9f5;      /* soft warm-light green for the site background */
+  --primary-color:                #2e7d32;      /* Sage/Forest green for headings and buttons */
+  --text-color:                   #1a231a;      /* Deep dark green/gray for readable text */
+  --muted-color:                  #556655;      /* Moss gray-green for descriptions */
+  --border-color:                 #d0dad0;      /* Soft green borders */
+  --card-bg:                      #e2ebd5;      /* Warm secondary container background */
+  --sidebar-bg:                   #e2ebd5;
+  --white-color:                  var(--bg-color);
 }
 
 .dark-theme {
-  --bg-color: #0b120b;      /* Very dark green-gray */
-  --primary-color: #52b757; /* Vivid forest green */
-  --text-color: #f4f9f5;    /* Light text */
-  --muted-color: #b2c0b2;   /* Light gray-green */
-  --border-color: #223222;  /* Dark green borders */
-  --card-bg: #131e13;       /* Dark green container background */
-  --sidebar-bg: #131e13;
-  --white-color: var(--bg-color);
+  --bg-color:                     #0c110d;      /* Deep luxurious slate forest charcoal background */
+  --primary-color:                #7ebf84;      /* Soft sage green that reads easily without neon harshness */
+  --text-color:                   #e3ede5;      /* Soft off-white with slight sage tint */
+  --muted-color:                  #8ea191;      /* Moss gray-green for description texts */
+  --border-color:                 #1b251d;      /* Low-impact border lines */
+  --card-bg:                      #131a15;      /* Cohesive container background */
+  --sidebar-bg:                   #131a15;
+  --white-color:                  var(--bg-color);
 }
 
 @import url(fontawesome-all.min.css);
@@ -2451,11 +2451,11 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 
 /* Interactive SVG Map of France */
 .france-map-wrapper {
-  background: var(--bg-color);
-  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  border: none !important;
   border-radius: 6px;
   padding: 20px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
 }
 
 .france-svg-map {
@@ -2481,21 +2481,21 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 }
 
 .city-facts-card {
-  background: var(--bg-color);
-  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  border: none !important;
   border-radius: 6px;
   padding: 20px;
   height: 100%;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
 }
 
 /* Vinyl Music Player Card */
 .music-player-card {
-  background: var(--bg-color);
-  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  border: none !important;
   border-radius: 6px;
   padding: 24px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
   text-align: center;
 }
 
@@ -2612,24 +2612,34 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 }
 
 .player-btn-controls button {
-  background: none;
-  border: none;
-  font-size: 20px;
-  color: var(--primary-color);
-  cursor: pointer;
-  padding: 0;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: var(--primary-color) !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  height: auto !important;
+  width: auto !important;
+  line-height: normal !important;
+  text-transform: none !important;
+  border-radius: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 20px !important;
 }
 
 .player-btn-controls .play-circle-toggle {
-  font-size: 32px;
+  font-size: 32px !important;
 }
 
 /* Chat bubble placement test */
 .chat-quiz-container {
-  background: var(--bg-color);
-  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  border: none !important;
   border-radius: 6px;
   padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
 }
 
 .chat-history {
@@ -2718,10 +2728,11 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 
 /* Calendar Scheduler Grid */
 .calendar-widget-card {
-  background: var(--bg-color);
-  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  border: none !important;
   border-radius: 6px;
   padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
 }
 
 .calendar-header-title {
@@ -2804,10 +2815,11 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 
 /* Student Portal Dashboard */
 .portal-card-wrapper {
-  background: var(--bg-color);
-  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  border: none !important;
   border-radius: 6px;
   padding: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
 }
 
 .dashboard-stats-grid {
