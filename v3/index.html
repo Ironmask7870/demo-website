@@ -8,32 +8,35 @@
 
         <title>L'Atelier Français | Private French Academy</title>
 
-        <!-- CSS FILES -->        
+        <!-- CSS FILES -->                
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-                        
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/bootstrap-icons.css" rel="stylesheet">
         <!-- FontAwesome for music and other premium icons -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-        <link href="css/templatemo-topic-listing.css" rel="stylesheet">      
+        <link href="css/templatemo-tiya-golf-club.css" rel="stylesheet">
     </head>
     
-    <body id="top">
+    <body>
 
         <main>
 
-            <!-- Sticky Capsule Navbar -->
-            <nav class="navbar navbar-expand-lg">
+            <!-- Navigation Bar -->
+            <nav class="navbar navbar-expand-lg">                
                 <div class="container">
-                    <a class="navbar-brand" href="#top">
-                        <i class="fa-solid fa-graduation-cap"></i>
-                        <span>L'Atelier</span>
+                    <a class="navbar-brand d-flex align-items-center" href="#top">
+                        <i class="fa-solid fa-graduation-cap me-2 text-primary" style="font-size: 24px;"></i>
+                        <span class="navbar-brand-text">
+                            L'Atelier
+                            <small>Français</small>
+                        </span>
                     </a>
 
-                    <div class="d-lg-none ms-auto me-4">
-                        <a href="#section_portal" class="navbar-icon bi-person smoothscroll"></a>
+                    <div class="d-lg-none ms-auto me-3">
+                        <a class="btn custom-btn custom-border-btn" data-bs-toggle="offcanvas" href="#offcanvasPortal" role="button" aria-controls="offcanvasPortal">Portal</a>
                     </div>
     
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,49 +44,180 @@
                     </button>
     
                     <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-lg-5 me-lg-auto">
+                        <ul class="navbar-nav ms-lg-auto">
                             <li class="nav-item">
                                 <a class="nav-link click-scroll" href="#section_home">Home</a>
                             </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_explore">French Lab</a>
-                            </li>
     
                             <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_timeline">Your Journey</a>
+                                <a class="nav-link click-scroll" href="#section_about">Monsieur Pierre</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_reservation">Book Lesson</a>
+                                <a class="nav-link click-scroll" href="#section_lab">Interactive Lab</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#section_courses">Courses</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#section_reservation">Book Class</a>
                             </li>
 
                             <li class="nav-item">
                                 <a class="nav-link click-scroll" href="#section_faq">FAQs</a>
                             </li>
-    
+
                             <li class="nav-item">
                                 <a class="nav-link click-scroll" href="#section_contact">Contact</a>
                             </li>
                         </ul>
 
-                        <!-- User Profile Link -->
-                        <div class="d-none d-lg-block me-3">
-                            <a href="#section_explore" class="navbar-icon bi-person smoothscroll"></a>
-                        </div>
-
                         <!-- Theme Toggle Button -->
-                        <div class="theme-toggle-container">
+                        <div class="theme-toggle-container me-lg-3">
                             <div class="theme-toggle-pill" id="theme-toggle" role="button" tabIndex="0" aria-label="Toggle dark theme">
                                 <div class="toggle-thumb"></div>
                                 <i class="fa-solid fa-sun"></i>
                                 <i class="fa-solid fa-moon"></i>
                             </div>
                         </div>
+
+                        <!-- Offcanvas Trigger Buttons -->
+                        <div class="d-none d-lg-block gap-2">
+                            <a class="btn custom-btn custom-border-btn btn-sm me-2" data-bs-toggle="offcanvas" href="#offcanvasQuiz" role="button" aria-controls="offcanvasQuiz">Placement Test</a>
+                            <a class="btn custom-btn custom-border-btn btn-sm" data-bs-toggle="offcanvas" href="#offcanvasPortal" role="button" aria-controls="offcanvasPortal">Student Portal</a>
+                        </div>
                     </div>
                 </div>
             </nav>
-            
+
+
+            <!-- Offcanvas 1: Placement Test Chatbot -->
+            <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasQuiz" aria-labelledby="offcanvasQuizLabel" style="width: 480px;">                
+                <div class="offcanvas-header border-bottom">
+                    <h5 class="offcanvas-title text-primary" id="offcanvasQuizLabel"><i class="fa-solid fa-clipboard-question"></i> Placement Assessment</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                
+                <div class="offcanvas-body d-flex flex-column justify-content-between p-4">
+                    <div class="chat-quiz-container border-0 shadow-none p-0">
+                        <div class="chat-history mb-3" id="chat-history" style="height: 380px;">
+                            <!-- Chat Bubbles dynamic load -->
+                        </div>
+                        <div class="quiz-options-grid" id="options-grid">
+                            <!-- Option Buttons dynamic load -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Offcanvas 2: Student Portal & Dashboard -->
+            <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasPortal" aria-labelledby="offcanvasPortalLabel" style="width: 520px;">                
+                <div class="offcanvas-header border-bottom">
+                    <h5 class="offcanvas-title text-primary" id="offcanvasPortalLabel"><i class="fa-solid fa-user-shield"></i> Student Workspace</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                
+                <div class="offcanvas-body p-4">
+                    <!-- Login Box -->
+                    <div id="portal-login-form">
+                        <div class="card p-4 border-light shadow-sm">
+                            <h4 class="mb-3 text-center">Login to Workspace</h4>
+                            <form>
+                                <div class="mb-3">
+                                    <label for="student-email" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="student-email" placeholder="eleve@latelier.com" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="student-pass" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="student-pass" value="password" required>
+                                </div>
+                                <button type="submit" class="btn custom-btn w-100" id="portal-login-btn">Log In</button>
+                            </form>
+                            <p class="text-muted text-center mt-3 mb-0" style="font-size: 13px;">Tip: Enter any email and click Log In to preview your student dashboard.</p>
+                        </div>
+                    </div>
+
+                    <!-- Dashboard panel (Initially hidden, revealed on click) -->
+                    <div id="student-dashboard-panel" style="display: none;">
+                        <div class="portal-card-wrapper border-0 shadow-none p-0">
+                            <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-4">
+                                <h4 class="mb-0 text-primary" id="welcome-student-name">Bonjour, Student!</h4>
+                                <span class="badge bg-success">Level B1</span>
+                            </div>
+
+                            <!-- Circle statistics rings -->
+                            <div class="dashboard-stats-grid">
+                                <div class="stat-metric-card p-3">
+                                    <div class="stat-circle-svg" style="width: 70px; height: 70px;">
+                                        <svg viewBox="0 0 80 80" style="width: 100%; height: 100%;">
+                                            <circle class="stat-circle-bg" cx="40" cy="40" r="36"></circle>
+                                            <circle class="stat-circle-fill" cx="40" cy="40" r="36"></circle>
+                                        </svg>
+                                    </div>
+                                    <h6 class="mb-1">Lesson Progress</h5>
+                                    <small class="text-muted">75% Complete</small>
+                                </div>
+
+                                <div class="stat-metric-card p-3 d-flex flex-column justify-content-center align-items-center">
+                                    <i class="bi-file-earmark-check text-primary mb-2" style="font-size: 24px;"></i>
+                                    <h6 class="mb-1">Homework Status</h6>
+                                    <small class="text-muted">1 pending correction</small>
+                                </div>
+
+                                <div class="stat-metric-card p-3 d-flex flex-column justify-content-center align-items-center">
+                                    <i class="bi-award-fill text-primary mb-2" style="font-size: 24px;"></i>
+                                    <h6 class="mb-1">Vocabulary XP</h6>
+                                    <small class="text-muted">2,100 XP gained</small>
+                                </div>
+                            </div>
+
+                            <div class="mt-4">
+                                <h5 class="mb-3"><i class="fa-solid fa-cloud-arrow-up text-primary"></i> Submit Written Homework</h5>
+                                <div class="dropbox-area p-4" id="assignment-dropbox">
+                                    <i class="bi-cloud-upload-fill"></i>
+                                    <p class="mb-0 text-muted mt-2">Click to select files or drop here</p>
+                                </div>
+                            </div>
+
+                            <div class="mt-4">
+                                <h5 class="mb-3"><i class="fa-solid fa-users-rectangle text-primary"></i> Academy Leaderboard</h5>
+                                <div class="table-responsive">
+                                    <table class="leaderboard-table table table-sm table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Rank</th>
+                                                <th>Student</th>
+                                                <th>XP Points</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>🥇 1</td>
+                                                <td>Marie-Laure</td>
+                                                <td>2,450 XP</td>
+                                            </tr>
+                                            <tr class="active-user">
+                                                <td>🥈 2</td>
+                                                <td>You (Élève)</td>
+                                                <td>2,100 XP</td>
+                                            </tr>
+                                            <tr>
+                                                <td>🥉 3</td>
+                                                <td>Jean-Pierre</td>
+                                                <td>1,980 XP</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
             <!-- Hero Section -->
             <section class="hero-section d-flex justify-content-center align-items-center" id="section_home">
@@ -91,18 +225,19 @@
                     <div class="row align-items-center">
 
                         <div class="col-lg-6 col-12 mb-5 mb-lg-0 text-center text-lg-start">
-                            <h1 class="text-white mb-3">Master French with Elegance & Precision</h1>
-                            <p class="text-white-50 fs-5 mb-4">Immersive, one-on-one French instruction designed by Monsieur Pierre, Sorbonne graduate and certified FLE educator.</p>
+                            <span class="badge bg-primary text-white fs-6 mb-3 px-3 py-2">Premium Language Instruction</span>
+                            <h1 class="mb-3 text-white">Master French with Elegance & Precision</h1>
+                            <p class="fs-5 mb-4 text-white-50">Custom-tailored private French courses combining grammatical structure with cultural immersion. Achieve fluency under Monsieur Pierre's guidance.</p>
                             
                             <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3">
-                                <a href="#section_explore" class="btn custom-btn smoothscroll">Explore Music & Map Labs</a>
-                                <a href="#section_reservation" class="btn custom-btn custom-border-btn smoothscroll">Book Evaluation Slot</a>
+                                <a href="#section_lab" class="btn custom-btn smoothscroll">Explore Interactive Lab</a>
+                                <a href="#section_reservation" class="btn custom-btn custom-border-btn smoothscroll">Book Evaluation Class</a>
                             </div>
                         </div>
 
                         <div class="col-lg-6 col-12">
                             <!-- Premium MacBook mockup displaying the teacher's intro video -->
-                            <div class="macbook-mockup">
+                            <div class="macbook-mockup shadow-lg">
                                 <div class="macbook-screen-bar">
                                     <div class="macbook-dot"></div>
                                     <div class="macbook-dot"></div>
@@ -120,13 +255,44 @@
             </section>
 
 
-            <!-- Interactive Hub (Explore Section) -->
-            <section class="explore-section section-padding" id="section_explore">
+            <!-- About Teacher Section -->
+            <section class="about-section section-padding" id="section_about">
+                <div class="container">
+                    <div class="row align-items-center">
+
+                        <div class="col-lg-5 col-12 mb-4 mb-lg-0 text-center">
+                            <img src="assets/teacher_profile.jpg" class="img-fluid rounded shadow-lg" style="max-height: 400px; object-fit: cover;" alt="Monsieur Pierre">
+                        </div>
+
+                        <div class="col-lg-7 col-12 ps-lg-5">
+                            <h2 class="mb-3 text-primary">Meet Monsieur Pierre</h2>
+                            <p class="lead">A Sorbonne graduate and certified FLE (Français Langue Étrangère) educator passionate about literature, linguistics, and student success.</p>
+                            <p>Monsieur Pierre brings years of specialized instruction from Paris straight to your screen. By matching grammatical structure with the natural flow and pronunciation of modern spoken French, his classes ensure that you overcome your conversational barriers quickly.</p>
+                            
+                            <div class="row mt-4">
+                                <div class="col-6 mb-3">
+                                    <h5 class="mb-1 text-primary"><i class="fa-solid fa-graduation-cap"></i> Credentials</h5>
+                                    <p class="mb-0 text-muted">Sorbonne University Degree</p>
+                                </div>
+                                <div class="col-6 mb-3">
+                                    <h5 class="mb-1 text-primary"><i class="fa-solid fa-certificate"></i> Certification</h5>
+                                    <p class="mb-0 text-muted">Alliance Française FLE Certified</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Interactive Lab Hub Section -->
+            <section class="explore-section section-padding section-bg" id="section_lab">
                 <div class="container">
                     <div class="row">
                         <div class="col-12 text-center mb-5">
-                            <h2 class="mb-2">L'Atelier French Lab</h2>
-                            <p class="text-muted">Dive into our interactive curriculum tools, map databases, and audio guides</p>
+                            <h2>L'Atelier Interactive Lab</h2>
+                            <p class="text-muted">Click the tabs below to experiment with pronunciation guides, regional maps, and CEFR tools.</p>
                         </div>
                     </div>
                 </div>
@@ -134,106 +300,30 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <!-- Tabs Navigation -->
+                            <!-- Lab Navigation -->
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="curriculum-tab" data-bs-toggle="tab" data-bs-target="#curriculum-tab-pane" type="button" role="tab" aria-controls="curriculum-tab-pane" aria-selected="true">Curriculum</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="map-tab" data-bs-toggle="tab" data-bs-target="#map-tab-pane" type="button" role="tab" aria-controls="map-tab-pane" aria-selected="false">Interactive Map</button>
+                                    <button class="nav-link active" id="map-tab" data-bs-toggle="tab" data-bs-target="#map-tab-pane" type="button" role="tab" aria-controls="map-tab-pane" aria-selected="true">France SVG Map</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="music-tab" data-bs-toggle="tab" data-bs-target="#music-tab-pane" type="button" role="tab" aria-controls="music-tab-pane" aria-selected="false">Music Lab</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="quiz-tab" data-bs-toggle="tab" data-bs-target="#quiz-tab-pane" type="button" role="tab" aria-controls="quiz-tab-pane" aria-selected="false">Placement Test</button>
+                                    <button class="nav-link" id="quiz-tab-pane-trigger" data-bs-toggle="offcanvas" data-bs-target="#offcanvasQuiz" type="button" aria-controls="offcanvasQuiz">CEFR Placement Quiz</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="portal-tab" data-bs-toggle="tab" data-bs-target="#portal-tab-pane" type="button" role="tab" aria-controls="portal-tab-pane" aria-selected="false">Student Portal</button>
+                                    <button class="nav-link" id="portal-tab-pane-trigger" data-bs-toggle="offcanvas" data-bs-target="#offcanvasPortal" type="button" aria-controls="offcanvasPortal">Student Portal</button>
                                 </li>
                             </ul>
 
                             <div class="tab-content" id="myTabContent">
 
-                                <!-- Tab 1: Curriculum -->
-                                <div class="tab-pane fade show active p-4" id="curriculum-tab-pane" role="tabpanel" aria-labelledby="curriculum-tab" tabindex="0">
-                                    <div class="row g-4">
-                                        <!-- Course 1 -->
-                                        <div class="col-lg-4 col-md-6 col-12">
-                                            <div class="custom-block bg-white shadow-lg p-4 h-100 d-flex flex-column justify-content-between">
-                                                <div>
-                                                    <div class="d-flex justify-content-between align-items-center mb-3">
-                                                        <h5 class="mb-0">French Foundation</h5>
-                                                        <span class="badge bg-success rounded-pill">A1 - A2</span>
-                                                    </div>
-                                                    <p class="mb-4 text-muted">Master everyday vocabulary, essential grammar structures, and begin conversing confidently.</p>
-                                                    <ul class="list-unstyled mb-4">
-                                                        <li class="mb-2"><i class="bi-check-circle-fill text-success me-2"></i> Present tense conjugation</li>
-                                                        <li class="mb-2"><i class="bi-check-circle-fill text-success me-2"></i> Basic conversational greetings</li>
-                                                        <li class="mb-2"><i class="bi-check-circle-fill text-success me-2"></i> Daily routine descriptions</li>
-                                                    </ul>
-                                                </div>
-                                                <div class="border-top pt-3 d-flex justify-content-between align-items-center">
-                                                    <span class="fs-5 fw-bold">$45<small class="text-muted">/hr</small></span>
-                                                    <a href="#section_reservation" class="btn btn-sm custom-btn smoothscroll">Enroll Now</a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Course 2 -->
-                                        <div class="col-lg-4 col-md-6 col-12">
-                                            <div class="custom-block bg-white shadow-lg p-4 h-100 d-flex flex-column justify-content-between">
-                                                <div>
-                                                    <div class="d-flex justify-content-between align-items-center mb-3">
-                                                        <h5 class="mb-0">Independent Speaker</h5>
-                                                        <span class="badge bg-success rounded-pill">B1 - B2</span>
-                                                    </div>
-                                                    <p class="mb-4 text-muted">Express complex opinions, master hypothetical tenses, and debates on socio-cultural issues.</p>
-                                                    <ul class="list-unstyled mb-4">
-                                                        <li class="mb-2"><i class="bi-check-circle-fill text-success me-2"></i> Past tenses & Subjunctive mood</li>
-                                                        <li class="mb-2"><i class="bi-check-circle-fill text-success me-2"></i> Arguing viewpoints in debate</li>
-                                                        <li class="mb-2"><i class="bi-check-circle-fill text-success me-2"></i> Reading news articles</li>
-                                                    </ul>
-                                                </div>
-                                                <div class="border-top pt-3 d-flex justify-content-between align-items-center">
-                                                    <span class="fs-5 fw-bold">$55<small class="text-muted">/hr</small></span>
-                                                    <a href="#section_reservation" class="btn btn-sm custom-btn smoothscroll">Enroll Now</a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Course 3 -->
-                                        <div class="col-lg-4 col-md-6 col-12">
-                                            <div class="custom-block bg-white shadow-lg p-4 h-100 d-flex flex-column justify-content-between">
-                                                <div>
-                                                    <div class="d-flex justify-content-between align-items-center mb-3">
-                                                        <h5 class="mb-0">Literary Mastery</h5>
-                                                        <span class="badge bg-success rounded-pill">C1 - C2</span>
-                                                    </div>
-                                                    <p class="mb-4 text-muted">Polish advanced nuances, analyze literature pieces, and speak with near-native ease.</p>
-                                                    <ul class="list-unstyled mb-4">
-                                                        <li class="mb-2"><i class="bi-check-circle-fill text-success me-2"></i> Complex grammatical nuances</li>
-                                                        <li class="mb-2"><i class="bi-check-circle-fill text-success me-2"></i> French idioms & slangs</li>
-                                                        <li class="mb-2"><i class="bi-check-circle-fill text-success me-2"></i> Classical literature reading</li>
-                                                    </ul>
-                                                </div>
-                                                <div class="border-top pt-3 d-flex justify-content-between align-items-center">
-                                                    <span class="fs-5 fw-bold">$65<small class="text-muted">/hr</small></span>
-                                                    <a href="#section_reservation" class="btn btn-sm custom-btn smoothscroll">Enroll Now</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <!-- Tab 2: Interactive France Map -->
-                                <div class="tab-pane fade p-4" id="map-tab-pane" role="tabpanel" aria-labelledby="map-tab" tabindex="0">
+                                <!-- Tab 1: Interactive SVG Map -->
+                                <div class="tab-pane fade show active p-4" id="map-tab-pane" role="tabpanel" aria-labelledby="map-tab" tabindex="0">
                                     <div class="row align-items-center g-4">
                                         <div class="col-lg-6 col-12">
                                             <div class="france-map-wrapper">
                                                 <svg viewBox="0 0 500 420" class="france-svg-map">
-                                                    <!-- Simplified outline of France regions -->
                                                     <path id="lille" d="M 230,20 L 290,20 L 310,60 L 260,80 L 220,50 Z" title="Lille"></path>
                                                     <path id="paris" d="M 220,100 L 290,90 L 310,140 L 240,160 L 200,120 Z" title="Paris" class="selected"></path>
                                                     <path id="strasbourg" d="M 350,90 L 410,100 L 430,160 L 370,180 L 340,130 Z" title="Strasbourg"></path>
@@ -243,7 +333,7 @@
                                                     <path id="marseille" d="M 290,320 L 350,310 L 370,370 L 310,390 L 270,350 Z" title="Marseille"></path>
                                                     <path id="nice" d="M 360,290 L 420,290 L 440,340 L 390,360 L 350,330 Z" title="Nice"></path>
                                                 </svg>
-                                                <p class="text-center text-muted mt-3 mb-0"><i class="fa-solid fa-hand-pointer"></i> Click a region to learn about local accents & vocabulary</p>
+                                                <p class="text-center text-muted mt-3 mb-0"><i class="fa-solid fa-circle-info"></i> Click on any regional region path to load local pronunciation metrics.</p>
                                             </div>
                                         </div>
 
@@ -256,12 +346,12 @@
                                                 <p class="lead" id="fact-desc">The capital of France, home to L'Atelier's flagship private studio. Known as the City of Light.</p>
                                                 
                                                 <div class="mt-4">
-                                                    <h5 class="text-primary"><i class="fa-solid fa-volume-high"></i> Local Accent</h5>
+                                                    <h5 class="text-primary"><i class="fa-solid fa-volume-high"></i> Local Pronunciation Accent</h5>
                                                     <p id="fact-accent">Standard French (the reference pronunciation globally).</p>
                                                 </div>
 
                                                 <div class="mt-4">
-                                                    <h5 class="text-primary"><i class="fa-solid fa-comments"></i> Popular Slang</h5>
+                                                    <h5 class="text-primary"><i class="fa-solid fa-comments"></i> Regional Vocabulary (Argot)</h5>
                                                     <p class="font-monospace" id="fact-slang">'Métro, boulot, dodo' (the daily grind of subway, work, sleep).</p>
                                                 </div>
                                             </div>
@@ -269,17 +359,15 @@
                                     </div>
                                 </div>
 
-
-                                <!-- Tab 3: Music Audio Guide -->
+                                <!-- Tab 2: French Music Lab -->
                                 <div class="tab-pane fade p-4" id="music-tab-pane" role="tabpanel" aria-labelledby="music-tab" tabindex="0">
                                     <div class="row g-4 align-items-stretch">
-                                        <!-- Player Visual & Controls -->
+                                        <!-- Player Visual Card -->
                                         <div class="col-lg-4 col-12">
                                             <div class="music-player-card text-center h-100 d-flex flex-column justify-content-between">
                                                 <div>
-                                                    <h5 class="mb-4">French Pronunciation Lab</h5>
+                                                    <h5 class="mb-4 text-primary"><i class="fa-solid fa-music"></i> Pronunciation Trainer</h5>
                                                     
-                                                    <!-- Spinning Vinyl Record visual -->
                                                     <div class="vinyl-record-visual" id="vinyl-disc">
                                                         <div class="vinyl-center-dot"></div>
                                                     </div>
@@ -291,7 +379,6 @@
                                                 </div>
 
                                                 <div class="player-controls-container">
-                                                    <!-- Seek Bar -->
                                                     <div class="player-bar-track" id="player-seek-track">
                                                         <div class="player-bar-fill" id="player-progress-bar"></div>
                                                     </div>
@@ -300,7 +387,6 @@
                                                         <span id="duration-label">3:05</span>
                                                     </div>
 
-                                                    <!-- Player buttons -->
                                                     <div class="player-btn-controls">
                                                         <button id="prev-btn" aria-label="Previous Track"><i class="bi-skip-start-fill"></i></button>
                                                         <button id="play-btn" class="play-circle-toggle" aria-label="Play/Pause"><i id="play-icon" class="bi-play-circle-fill"></i></button>
@@ -310,12 +396,12 @@
                                             </div>
                                         </div>
 
-                                        <!-- Subtitle Lyrics Box -->
+                                        <!-- Lyrics Sync Card -->
                                         <div class="col-lg-4 col-12">
-                                            <div class="custom-block bg-white shadow-lg p-4 h-100 d-flex flex-column justify-content-between">
+                                            <div class="card p-4 border-light shadow-sm h-100 d-flex flex-column justify-content-between">
                                                 <div>
-                                                    <h5 class="mb-3">Bilingual Subtitles</h5>
-                                                    <p class="text-muted">Sing along in French and read standard English translation to associate vocabulary and practice accentuation.</p>
+                                                    <h5 class="mb-3 text-primary"><i class="fa-solid fa-language"></i> Dynamic Bilingual Subtitles</h5>
+                                                    <p class="text-muted" style="font-size: 14px;">Listen to the track, match the text structure to the acoustic sounds, and learn literal translations simultaneously.</p>
                                                 </div>
 
                                                 <div class="lyrics-subtitle-box" id="lyrics-subtitle-box">
@@ -326,12 +412,12 @@
                                             </div>
                                         </div>
 
-                                        <!-- Playlist Items Selector -->
+                                        <!-- Track Selection List -->
                                         <div class="col-lg-4 col-12">
-                                            <div class="custom-block bg-white shadow-lg p-4 h-100 d-flex flex-column justify-content-between">
+                                            <div class="card p-4 border-light shadow-sm h-100 d-flex flex-column justify-content-between">
                                                 <div>
-                                                    <h5 class="mb-3">Monsieur Pierre's Playlist</h5>
-                                                    <p class="text-muted">Choose your track from classical pieces to practice phonetics.</p>
+                                                    <h5 class="mb-3 text-primary"><i class="fa-solid fa-rectangle-list"></i> Select Songs</h5>
+                                                    <p class="text-muted" style="font-size: 14px;">Pick classical or contemporary tracks to work on oral patterns.</p>
                                                     
                                                     <div class="playlist-tracks-container">
                                                         <div class="playlist-track-item active" data-track-index="0">
@@ -354,150 +440,6 @@
                                     </div>
                                 </div>
 
-
-                                <!-- Tab 4: Placement Test Quiz -->
-                                <div class="tab-pane fade p-4" id="quiz-tab-pane" role="tabpanel" aria-labelledby="quiz-tab" tabindex="0">
-                                    <div class="row g-4 align-items-center">
-                                        <div class="col-lg-6 col-12">
-                                            <div class="chat-quiz-container">
-                                                <div class="chat-history" id="chat-history">
-                                                    <!-- Dynamic Chat messages inserted here by script -->
-                                                </div>
-                                                <div class="quiz-options-grid" id="options-grid">
-                                                    <!-- Option buttons loaded dynamically -->
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="col-lg-6 col-12">
-                                            <div class="p-4 bg-light rounded shadow-sm">
-                                                <h4 class="mb-3"><i class="fa-solid fa-clipboard-question text-primary"></i> CEFR Assessment Quiz</h4>
-                                                <p>Evaluate your current levels instantly! Our adaptive chat interface asks questions from A1 starter vocabulary through advanced C1 sentence syntax logic.</p>
-                                                <ul class="list-unstyled mt-3">
-                                                    <li class="mb-2"><i class="bi-check2-circle text-success me-2"></i> Simple multiple choice design</li>
-                                                    <li class="mb-2"><i class="bi-check2-circle text-success me-2"></i> Direct feedback with grammatical explanations</li>
-                                                    <li class="mb-2"><i class="bi-check2-circle text-success me-2"></i> Generates suggested path instantly</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <!-- Tab 5: Student Portal Dashboard -->
-                                <div class="tab-pane fade p-4" id="portal-tab-pane" role="tabpanel" aria-labelledby="portal-tab" tabindex="0">
-                                    <div class="row g-4">
-                                        <!-- Login form area -->
-                                        <div class="col-12" id="portal-login-form">
-                                            <div class="card p-4 mx-auto shadow-sm" style="max-width: 450px;">
-                                                <h4 class="text-center mb-3">Student Workspace Login</h4>
-                                                <form>
-                                                    <div class="mb-3">
-                                                        <label for="student-email" class="form-label">Email address</label>
-                                                        <input type="email" class="form-control" id="student-email" placeholder="eleve@latelier.com" required>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label for="student-pass" class="form-label">Password</label>
-                                                        <input type="password" class="form-control" id="student-pass" value="password" required>
-                                                    </div>
-                                                    <button type="submit" class="btn custom-btn w-100" id="portal-login-btn">Accéder à mon espace</button>
-                                                </form>
-                                                <p class="text-center text-muted mt-3 mb-0" style="font-size: 13px;">Demo Tip: Type any email and click login to view dashboard preview.</p>
-                                            </div>
-                                        </div>
-
-                                        <!-- Dashboard area (Hidden by default, displayed on login success) -->
-                                        <div class="col-12" id="student-dashboard-panel" style="display: none;">
-                                            <div class="portal-card-wrapper">
-                                                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center border-bottom pb-3 mb-4">
-                                                    <h3 class="mb-1" id="welcome-student-name">Bonjour, Élève !</h3>
-                                                    <span class="badge bg-success">Niveau B1 • Actif</span>
-                                                </div>
-
-                                                <!-- Stats grid -->
-                                                <div class="dashboard-stats-grid">
-                                                    <!-- Progress Widget -->
-                                                    <div class="stat-metric-card">
-                                                        <div class="stat-circle-svg">
-                                                            <svg viewBox="0 0 80 80" class="stat-circle-svg">
-                                                                <circle class="stat-circle-bg" cx="40" cy="40" r="36"></circle>
-                                                                <circle class="stat-circle-fill" cx="40" cy="40" r="36"></circle>
-                                                            </svg>
-                                                        </div>
-                                                        <h5>Course Progress</h5>
-                                                        <p class="text-muted mb-0">75% (15 of 20 lessons)</p>
-                                                    </div>
-
-                                                    <!-- Homework status -->
-                                                    <div class="stat-metric-card d-flex flex-column justify-content-center">
-                                                        <i class="bi-journal-check text-primary mb-2" style="font-size: 32px;"></i>
-                                                        <h5>Assignments</h5>
-                                                        <p class="text-muted mb-0">2 Graded • 1 Pending Correction</p>
-                                                    </div>
-
-                                                    <!-- Quiz Average -->
-                                                    <div class="stat-metric-card d-flex flex-column justify-content-center">
-                                                        <i class="bi-award-fill text-primary mb-2" style="font-size: 32px;"></i>
-                                                        <h5>Vocab Score</h5>
-                                                        <p class="text-muted mb-0">92% average accuracy</p>
-                                                    </div>
-                                                </div>
-
-                                                <div class="row mt-4 g-4">
-                                                    <!-- Assignments Dropbox -->
-                                                    <div class="col-lg-6 col-12">
-                                                        <div class="card p-3 border-light shadow-sm h-100">
-                                                            <h5 class="mb-3">Submit Written Assignment</h5>
-                                                            <p class="text-muted" style="font-size: 14px;">Drag and drop your homework (PDF or DOCX) directly to Pierre for grammatical critique.</p>
-                                                            
-                                                            <div class="dropbox-area" id="assignment-dropbox">
-                                                                <i class="bi-cloud-upload-fill"></i>
-                                                                <p class="mb-0 text-muted">Drag files here or click to browse</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <!-- Leaderboard -->
-                                                    <div class="col-lg-6 col-12">
-                                                        <div class="card p-3 border-light shadow-sm h-100">
-                                                            <h5 class="mb-3">Academy Leaderboard (July 2026)</h5>
-                                                            <div class="table-responsive">
-                                                                <table class="leaderboard-table">
-                                                                    <thead>
-                                                                        <tr>
-                                                                            <th>Rank</th>
-                                                                            <th>Student</th>
-                                                                            <th>XP Points</th>
-                                                                        </tr>
-                                                                    </thead>
-                                                                    <tbody>
-                                                                        <tr>
-                                                                            <td>🥇 1</td>
-                                                                            <td>Marie-Laure</td>
-                                                                            <td>2,450 XP</td>
-                                                                        </tr>
-                                                                        <tr class="active-user">
-                                                                            <td>🥈 2</td>
-                                                                            <td>You (Élève)</td>
-                                                                            <td>2,100 XP</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>🥉 3</td>
-                                                                            <td>Jean-Pierre</td>
-                                                                            <td>1,980 XP</td>
-                                                                        </tr>
-                                                                    </tbody>
-                                                                </table>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-
                             </div>
                         </div>
                     </div>
@@ -505,85 +447,104 @@
             </section>
 
 
-            <!-- Your Learning Journey Timeline -->
-            <section class="timeline-section section-padding" id="section_timeline">
+            <!-- Courses & Curriculum Section -->
+            <section class="section-padding" id="section_courses">
                 <div class="container">
                     <div class="row">
-
-                        <div class="col-12 text-center">
-                            <h2 class="mb-5">Your Learning Journey Timeline</h2>
+                        <div class="col-12 text-center mb-5">
+                            <h2>Curriculum & Level Paths</h2>
+                            <p class="text-muted">Structured private programs aligned directly with the official CEFR scale standards.</p>
                         </div>
+                    </div>
 
-                        <div class="col-lg-10 col-12 mx-auto">
-                            <ul class="vertical-scrollable-timeline" id="vertical-scrollable-timeline">
-                                <div class="list-progress">
-                                    <div class="inner"></div>
+                    <div class="row g-4">
+                        <!-- Course 1 -->
+                        <div class="col-lg-4 col-12">
+                            <div class="card p-4 h-100 border-light shadow-lg d-flex flex-column justify-content-between">
+                                <div>
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h4 class="mb-0 text-primary">Foundation French</h4>
+                                        <span class="badge bg-success">A1 - A2</span>
+                                    </div>
+                                    <p class="text-muted">Establish the ground. Learn fundamental grammatical blocks, daily communication topics, and greetings.</p>
+                                    <ul class="list-unstyled my-4">
+                                        <li class="mb-2"><i class="bi-check2 text-success me-2"></i> Present conjugation verbs</li>
+                                        <li class="mb-2"><i class="bi-check2 text-success me-2"></i> Daily routine descriptions</li>
+                                        <li class="mb-2"><i class="bi-check2 text-success me-2"></i> Sound and phonetics practice</li>
+                                    </ul>
                                 </div>
-
-                                <li>
-                                    <h4 class="text-white mb-2">Step 1: Free Evaluation & Placement</h4>
-                                    <p class="text-white-50">Determine your exact vocabulary, grammar, and oral goals through our chat advisor or a private Zoom evaluation session with Pierre.</p>
-                                    <div class="icon-holder">
-                                      <i class="bi-search"></i>
-                                    </div>
-                                </li>
-                                
-                                <li>
-                                    <h4 class="text-white mb-2">Step 2: Core Sentence Structure</h4>
-                                    <p class="text-white-50">Build solid foundations. Understand sentence compositions, verb conjugations, and practice phonetics using our Music Lab lyrics.</p>
-                                    <div class="icon-holder">
-                                      <i class="bi-book"></i>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <h4 class="text-white mb-2">Step 3: Cultural Slangs & Idioms</h4>
-                                    <p class="text-white-50">Speak like a local. Explore different French regions, study idiomatic expressions, and start sounding natural.</p>
-                                    <div class="icon-holder">
-                                      <i class="bi-chat-dots"></i>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <h4 class="text-white mb-2">Step 4: Interactive Oral Debates</h4>
-                                    <p class="text-white-50">Overcome oral blocks. Engage in discussions regarding French news articles and defend viewpoints in debate format.</p>
-                                    <div class="icon-holder">
-                                      <i class="bi-megaphone"></i>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <h4 class="text-white mb-2">Step 5: Full Fluency Mastery</h4>
-                                    <p class="text-white-50">Conquer classic French literature works, write critiques, and pass intermediate DELF B2 / advanced DALF C1 certifications easily.</p>
-                                    <div class="icon-holder">
-                                      <i class="bi-award"></i>
-                                    </div>
-                                </li>
-                            </ul>
+                                <div class="border-top pt-3 d-flex justify-content-between align-items-center">
+                                    <span class="fs-5 fw-bold">$45<small class="text-muted">/hr</small></span>
+                                    <a href="#section_reservation" class="btn btn-sm custom-btn smoothscroll">Book Class</a>
+                                </div>
+                            </div>
                         </div>
 
+                        <!-- Course 2 -->
+                        <div class="col-lg-4 col-12">
+                            <div class="card p-4 h-100 border-light shadow-lg d-flex flex-column justify-content-between">
+                                <div>
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h4 class="mb-0 text-primary">Independent Speaker</h4>
+                                        <span class="badge bg-success">B1 - B2</span>
+                                    </div>
+                                    <p class="text-muted">Bridge to flow. Master conditional and subjunctive moods, defend arguments, and converse freely.</p>
+                                    <ul class="list-unstyled my-4">
+                                        <li class="mb-2"><i class="bi-check2 text-success me-2"></i> Hypothetical and past tenses</li>
+                                        <li class="mb-2"><i class="bi-check2 text-success me-2"></i> Reading press articles & reports</li>
+                                        <li class="mb-2"><i class="bi-check2 text-success me-2"></i> Idiomatic vocabulary use</li>
+                                    </ul>
+                                </div>
+                                <div class="border-top pt-3 d-flex justify-content-between align-items-center">
+                                    <span class="fs-5 fw-bold">$55<small class="text-muted">/hr</small></span>
+                                    <a href="#section_reservation" class="btn btn-sm custom-btn smoothscroll">Book Class</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Course 3 -->
+                        <div class="col-lg-4 col-12">
+                            <div class="card p-4 h-100 border-light shadow-lg d-flex flex-column justify-content-between">
+                                <div>
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h4 class="mb-0 text-primary">Near-Native Fluency</h4>
+                                        <span class="badge bg-success">C1 - C2</span>
+                                    </div>
+                                    <p class="text-muted">Master advanced literary texts, business debates, and complex grammatical structures easily.</p>
+                                    <ul class="list-unstyled my-4">
+                                        <li class="mb-2"><i class="bi-check2 text-success me-2"></i> Literature pieces review</li>
+                                        <li class="mb-2"><i class="bi-check2 text-success me-2"></i> Advanced grammatical styling</li>
+                                        <li class="mb-2"><i class="bi-check2 text-success me-2"></i> Regional accent and dialect codes</li>
+                                    </ul>
+                                </div>
+                                <div class="border-top pt-3 d-flex justify-content-between align-items-center">
+                                    <span class="fs-5 fw-bold">$65<small class="text-muted">/hr</small></span>
+                                    <a href="#section_reservation" class="btn btn-sm custom-btn smoothscroll">Book Class</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
 
-            <!-- Calendar Slot Scheduler Section -->
+            <!-- Calendar reservation section -->
             <section class="section-padding section-bg" id="section_reservation">
                 <div class="container">
                     <div class="row">
                         <div class="col-12 text-center mb-5">
-                            <h2>Book Private Class with Pierre</h2>
-                            <p class="text-muted">Choose your day in July 2026, select a free slot, and confirm instantly</p>
+                            <h2>Book Class with Pierre</h2>
+                            <p class="text-muted">Choose your day in July 2026, select a free slot, and confirm instantly.</p>
                         </div>
 
                         <div class="col-lg-8 col-12 mx-auto">
-                            <div class="calendar-widget-card">
+                            <div class="calendar-widget-card shadow-lg">
                                 <div class="row g-4">
                                     <!-- Calendar widget -->
                                     <div class="col-md-7 col-12 border-end-md">
                                         <div class="calendar-header-title">
                                             <h5 class="mb-0 text-primary"><i class="bi-calendar-date"></i> Juillet 2026</h5>
-                                            <span class="text-muted">Paris Time (CET)</span>
+                                            <span class="text-muted">Paris (CET)</span>
                                         </div>
                                         
                                         <!-- Weekday labels -->
@@ -669,7 +630,7 @@
             </section>
 
 
-            <!-- FAQ Section -->
+            <!-- FAQ Accordions -->
             <section class="faq-section section-padding" id="section_faq">
                 <div class="container">
                     <div class="row">
@@ -743,39 +704,42 @@
             </section>
 
 
-            <!-- Contact & Profile Section -->
+            <!-- Contact Section -->
             <section class="contact-section section-padding" id="section_contact">
                 <div class="container">
                     <div class="row align-items-center">
 
-                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
-                            <div class="card p-4 text-center border-light shadow-sm">
-                                <img src="assets/teacher_profile.jpg" class="rounded-circle img-fluid mx-auto mb-3" style="width: 150px; height: 150px; object-fit: cover;" alt="Monsieur Pierre">
-                                <h4>Monsieur Pierre</h4>
-                                <p class="text-primary fw-bold mb-2">Sorbonne Graduate & Certified Instructor</p>
-                                <p class="text-muted" style="font-size: 14px;">"Teaching French is about linking structure with melody. Let's make you fluent."</p>
+                        <div class="col-lg-5 col-12 mb-4 mb-lg-0">
+                            <h2 class="mb-4">Get in Touch</h2>
+                            <p>If you have any questions or want to discuss a customized long-term roadmap, drop me a message directly!</p>
+                            
+                            <div class="mt-4">
+                                <p class="mb-2"><i class="bi-geo-alt me-2 text-primary"></i> 14 Rue des Écoles, 75005 Paris, France</p>
+                                <p class="mb-2"><i class="bi-telephone me-2 text-primary"></i> +33 (0)1 42 34 56 78</p>
+                                <p class="mb-0"><i class="bi-envelope me-2 text-primary"></i> pierre@latelierfrancais.com</p>
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
-                            <h4 class="mb-4">Academy Location</h4>
-                            <p class="mb-3"><i class="bi-geo-alt-fill text-primary me-2"></i> 14 Rue des Écoles, 75005 Paris, France</p>
-                            <p class="mb-3"><i class="bi-telephone-fill text-primary me-2"></i> +33 (0)1 42 34 56 78</p>
-                            <p class="mb-0"><i class="bi-envelope-fill text-primary me-2"></i> pierre@latelierfrancais.com</p>
-                        </div>
-
-                        <div class="col-lg-4 col-12">
-                            <h4 class="mb-4">Get In Touch</h4>
+                        <div class="col-lg-7 col-12">
                             <form action="#" method="post" class="custom-form contact-form" role="form">
                                 <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-12 mb-3">
-                                        <input type="text" name="name" id="name" class="form-control" placeholder="Name" required>
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" name="name" id="name" class="form-control" placeholder="Name" required>
+                                            <label for="floatingInput">Name</label>
+                                        </div>
                                     </div>
-                                    <div class="col-lg-6 col-md-6 col-12 mb-3">
-                                        <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email" required>
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="form-floating mb-3">
+                                            <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email" required>
+                                            <label for="floatingInput">Email address</label>
+                                        </div>
                                     </div>
-                                    <div class="col-12 mb-3">
-                                        <textarea class="form-control" rows="3" name="message" id="message" placeholder="Tell me about your level & goals" required></textarea>
+                                    <div class="col-12">
+                                        <div class="form-floating mb-3">
+                                            <textarea class="form-control" id="message" name="message" placeholder="Leave a message here" style="height: 100px" required></textarea>
+                                            <label for="floatingTextarea">Tell me about your level & goals...</label>
+                                        </div>
                                     </div>
                                     <div class="col-12">
                                         <button type="submit" class="btn custom-btn w-100">Send Message</button>
@@ -790,41 +754,36 @@
 
         </main>
 
-        <footer class="site-footer section-padding">
+        <footer class="site-footer">
             <div class="container">
                 <div class="row">
 
-                    <div class="col-lg-3 col-12 mb-4 pb-2">
-                        <a class="navbar-brand mb-2" href="#top">
-                            <i class="fa-solid fa-graduation-cap text-white"></i>
-                            <span class="text-white">L'Atelier</span>
+                    <div class="col-lg-4 col-12 mb-4">
+                        <a class="navbar-brand d-flex align-items-center" href="#top">
+                            <i class="fa-solid fa-graduation-cap me-2 text-white" style="font-size: 24px;"></i>
+                            <span class="text-white">
+                                L'Atelier
+                                <small class="text-white-50">Français</small>
+                            </span>
                         </a>
-                        <p class="text-white-50">Premium Parisian French instruction for language excellence.</p>
+                        <p class="text-white-50 mt-3">Premium Parisian French instruction for ambitious language students.</p>
                     </div>
 
-                    <div class="col-lg-3 col-md-4 col-6 mb-4 mb-lg-0">
+                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                         <h6 class="text-white mb-3">Quick Links</h6>
                         <ul class="site-footer-links list-unstyled">
-                            <li><a href="#section_home" class="site-footer-link">Home</a></li>
-                            <li><a href="#section_explore" class="site-footer-link">French Lab</a></li>
-                            <li><a href="#section_timeline" class="site-footer-link">Your Journey</a></li>
-                            <li><a href="#section_reservation" class="site-footer-link">Book Lesson</a></li>
+                            <li><a href="#section_home" class="site-footer-link text-white-50">Home</a></li>
+                            <li><a href="#section_about" class="site-footer-link text-white-50">Monsieur Pierre</a></li>
+                            <li><a href="#section_lab" class="site-footer-link text-white-50">Interactive Lab</a></li>
+                            <li><a href="#section_courses" class="site-footer-link text-white-50">Courses</a></li>
+                            <li><a href="#section_reservation" class="site-footer-link text-white-50">Book Class</a></li>
                         </ul>
                     </div>
 
-                    <div class="col-lg-3 col-md-4 col-6 mb-4 mb-lg-0">
-                        <h6 class="text-white mb-3">Resources</h6>
-                        <ul class="site-footer-links list-unstyled">
-                            <li><a href="#section_explore" class="site-footer-link">Music Guide</a></li>
-                            <li><a href="#section_explore" class="site-footer-link">Geography Map</a></li>
-                            <li><a href="#section_explore" class="site-footer-link">CEFR Placement Quiz</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4 col-12 mb-4 mb-lg-0">
+                    <div class="col-lg-4 col-md-6 col-12">
                         <h6 class="text-white mb-3">Certifications</h6>
-                        <p class="text-white-50"><i class="fa-solid fa-certificate me-2"></i> Sorbonne Letter of Excellence</p>
-                        <p class="text-white-50"><i class="fa-solid fa-certificate me-2"></i> Alliance Française FLE certified</p>
+                        <p class="text-white-50"><i class="fa-solid fa-certificate me-2 text-primary"></i> Sorbonne Letter of Excellence</p>
+                        <p class="text-white-50"><i class="fa-solid fa-certificate me-2 text-primary"></i> Alliance Française FLE certified</p>
                     </div>
 
                 </div>
